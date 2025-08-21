@@ -1,0 +1,8 @@
+REVISÃO - INCREMENTO E DECREMENTO:
+    Pós:
+    i++: primeiro, o valor de i é usado na expressão, e depois é incrementado em 1.
+    i--: primeiro, o valor de i é usado na expressão, e depois é decrementado em 1.
+
+    Pré:
+    ++i: primeiro, o valor de i é incrementado em 1, e então o novo valor de i é usado na expressão.
+    --i: primeiro, o valor de i é decrementado em 1, e então o novo valor de i é usado na expressão.
