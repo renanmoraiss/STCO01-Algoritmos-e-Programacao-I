@@ -6,7 +6,7 @@ int main() {
         scanf("%d", &vet[i]);
     }
     for (int i = 0; i < 5; i++) {
-        printf("%d\t", *(vet + i) * 2);
+        printf("Dobro de %d = %d\t", *(vet + i), *(vet + i) * 2);
     }
     return 0;
 }
