@@ -1,0 +1,5 @@
+struct x union (DIFERENÇA)
+-> struct: armazena todos os membros juntos, pois cada membro ocupa seu próprio espaço de memória.
+  -> tamanho da struct: soma do tamanho dos membros.
+-> union: armazena apenas um membro de cada vez, pois todos os membros compartilham o mesmo espaço de memória.
+  -> tamanho da union: tamanho do maior membro.
