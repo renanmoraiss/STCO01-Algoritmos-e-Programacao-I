@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct ContaBancaria {
     unsigned short int numero;
@@ -24,7 +25,6 @@ int main() {
     printf("\nAgora que criou sua conta, qual operacao deseja realizar:\n");
     printf("1. Deposito\n");
     printf("2. Saque\n");
-    printf("3. Encerrar\n");
     printf("Opcao escolhida: ");
     scanf("%hu", &opcao);
 
@@ -41,12 +41,8 @@ int main() {
         printf("Voce sacou R$ %0.2lf\n", conta_bancaria.saldo);
         break;
 
-        case 3:
-        printf("Sistema Encerrado\n");
-        return -1;
-
         default:
-        printf("Sistema Encerrado\n");
+        return -1;
         
     }
 

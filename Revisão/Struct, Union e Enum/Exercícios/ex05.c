@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Carro {
     char marca[30];

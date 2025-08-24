@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Aluno {
     short int matricula;
@@ -24,7 +25,7 @@ int main() {
 
     for (int i = 0; i < 5; i++) {
         printf("\n===== DADOS DO ALUNO %d =====\n", i+1);
-        printf("Matricula: %d\n", alunos[i].matricula);
+        printf("Matricula: %hd\n", alunos[i].matricula);
         printf("Nome: %s\n", alunos[i].nome);
         printf("Nota: %0.2f\n", alunos[i].nota);
     }

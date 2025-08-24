@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Pessoa {
     char nome[30];
