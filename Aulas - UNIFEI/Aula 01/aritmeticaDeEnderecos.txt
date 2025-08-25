@@ -1,0 +1,28 @@
+-> Os elementos de qualquer vetor são armazenados em bytes consecutivos da memória do computador.
+-> Se cada elemento do vetor ocupa X bytes, então a diferença entre os endereços de dois elementos consecutivos é X.
+
+Porém, o compilador ajusta detalhes internos de modo a criar a ilusão de que a diferença entre os endereços de dois elementos
+consecutivos é 1, qualquer que seja o valor de X.
+
+-> Por exemplo, depois da declaração:
+     int *v; -> ponteiro para inteiro.
+     v = malloc (100 * sizeof(int)); -> aloca espaço para 100 inteiros.
+
+o endereço do primeiro elemento do vetor é v, o endereço do segundo elemento é v + 1, o endereço do terceiro elemento é v + 2, e assim vai.
+Se i é uma variável do tipo int, então:
+     v + i
+é o endereço do (i + 1)-ésimo elemento do vetor. As expressões v + i e &v[i] tem exatamente o mesmo valor e portanto as atribuições:
+    *(v + i) == v[i]
+tem o mesmo efeito. Portanto, qualquer dos dois fragmentos de código abaixo pode ser usado para preencher o vetor v:
+    1. for (int i = 0; i < 100; i++) {
+        scanf("%d", &v[i]);
+    }
+
+    2. for (int i = 0; i < 100; i++) {
+        scanf("%d", v + i);
+    }
+
+Todas essas considerações também valem se o vetor for alocado estaticamente (ou seja, antes que o programa comece a ser executado)
+por uma declaração como:
+    int v[100];
+mas nesse caso, v é uma espécie de "ponteiro constante", cujo valor não pode ser alterado.

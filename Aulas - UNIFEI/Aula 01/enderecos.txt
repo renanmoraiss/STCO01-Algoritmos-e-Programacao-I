@@ -1,0 +1,36 @@
+-> A memória RAM (random access memory) de qlqr computador é uma sequencia de bytes.
+-> A posição (0, 1, 2, 3, etc...) que um byte ocupa na sequencia é o endereço (address) do byte.
+
+-> Cada variável de um programa ocupa uma certa qtd de bytes consecutivos na memória do computador.
+-> Por ex: char ocupa 1 byte; int ocupa 4 bytes; float ocupa 4 bytes; double ocupa 8 bytes...
+
+O número exato de btyes de uma variável é dada pelo operador 'sizeof'.
+-> Por ex: a expressão sizeof(char) vale 1 em todos os computadores, 
+enquanto a expressão sizeof(int) vale 4 em muitos computadores.
+
+-> Cada variável tem um endereço na memória. Na maioria dos computadores, o endereço de uma variável é o 
+endereço do seu primeiro byte. Por ex, dps das declarações:
+     char c;
+     int i;
+     struct Ponto {
+        int x, y;
+     };
+     int v[4];
+
+as variáveis poderiam ter os seguintes endereços (exemplo fictício):
+    c       89421 -> c ocupa 1 byte
+    i       89422 -> i ocupa 4 bytes
+    ponto   89426 -> ponto ocupa 8 bytes
+    v[0]    89434 -> v[0] ocupa 4 bytes
+    v[1]    89438 -> v[1] ocupa 4 bytes
+    v[2]    89442 -> v[2] ocupa 4 bytes
+    v[3]    89446 -> v[3] ocupa 4 bytes
+
+-> O endereço de uma variável é dada pelo operador &. Assim, se i é uma variável, então &i é o seu endereço.
+Então, com base no exemplo acima, &i vale 89422 e &v[3] vale 89446.
+
+Outro exemplo é a função scanf da biblioteca <stdio.h>, que utiliza o & no seu segundo argumento
+para indicar o endereço da variável que deve receber o valor lido do teclado.
+->Ex:
+    int i;
+    scanf("%d", &i);

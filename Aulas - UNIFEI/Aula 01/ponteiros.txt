@@ -1,0 +1,26 @@
+Um ponteiro (apontador) é um tipo especial de variável que armazena um endereço.
+-> Um ponteiro pode ter o valor NULL que é um endereço "inválido". 
+A macro NULL está definida na <stdlib.h> e seu valor é 0 (zero) na maioria dos computadores.
+
+-> Se um ponteiro p armazena o endereço de uma variável i, podemos dizer que "p aponta para i" ou "p é o endereço de i".
+-> Em termos mais abstratos, diz-se que p é uma referencia a variável i.
+-> Se um ponteiro p tem valor diferente de NULL, então *p é o valor da variável apontada por p.
+
+Por exemplo, se i é uma variável e p vale &i, então dizer "*p" é o mesmo que dizer "i".
+
+TIPOS DE PONTEIROS.
+Há varios tipos de ponteiros:
+- ponteiros para bytes;
+- ponteiros para inteiros;
+- ponteiros para ponteiros para inteiros;
+- ponteiros para registros (struct);
+
+-> Para declarar um ponteiro p para um inteiro, basta escrever:
+    int *p;
+
+-> Para declar um ponteiro p para um registro reg, basta escrever:
+    struct reg *p;
+
+-> Um ponteiro r para um ponteiro que apontará um inteiro (como no caso de uma matriz de inteiro) é declarado assim:
+   int **r;
+
