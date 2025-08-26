@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprimeVetor1(int *vet, int tam);
-void imprimeVetor2(int vet2[], int tam);
+void imprimeVetor(int *vet, int tam, char frase[]);
 
 int main() {
     int *vet, *vet2, tam;
+    char frase1[] = "malloc";
+    char frase2[] = "calloc";
 
     printf("Tamanho dos vetores: ");
     scanf("%d", &tam);
@@ -22,8 +23,8 @@ int main() {
         return -1;
     }
 
-    imprimeVetor1(vet, tam);
-    imprimeVetor2(vet2, tam);
+    imprimeVetor(vet, tam, frase1);
+    imprimeVetor(vet2, tam, frase2);
 
     free(vet);
     free(vet2);
@@ -31,16 +32,9 @@ int main() {
     return 0;
 }
 
-void imprimeVetor1(int *vet, int tam) {
-    printf("\nVetor alocado com malloc:\n");
+void imprimeVetor(int *vet, int tam, char frase[]) {
+    printf("\nVetor alocado com %s:\n", frase);
     for (int i = 0; i < tam; i++) {
         printf("vet[%d] = %d\n", i, *(vet + i));
-    } printf("\n");
-}
-
-void imprimeVetor2(int vet2[], int tam) {
-    printf("Vetor alocado com calloc:\n");
-    for (int i = 0; i < tam; i++) {
-        printf("vet2[%d] = %d\n", i, *(vet2 + i));
     }
 }

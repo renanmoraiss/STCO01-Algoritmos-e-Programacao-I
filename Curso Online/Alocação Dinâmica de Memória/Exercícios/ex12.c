@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void preencheMatriz(int **mat, int linhas, int colunas);
-void imprimeMatriz(int **mat, int linhas, int colunas);
+void preencheMatriz(int** mat, int linhas, int colunas);
+void imprimeMatriz(int ** mat, int linhas, int colunas);
 
 int main() {
     int **mat, linhas, colunas;
@@ -12,14 +12,14 @@ int main() {
     printf("Colunas: ");
     scanf("%d", &colunas);
 
-    mat = calloc(linhas, sizeof(int*));
+    mat = malloc(sizeof(int*) * linhas);
 
     if (mat == NULL) {
         return -1;
     }
 
     for (int i = 0; i < linhas; i++) {
-        mat[i] = calloc(colunas, sizeof(int));
+        mat[i] = malloc(sizeof(int) * colunas);
         if (mat[i] == NULL) {
             return -1;
         }
@@ -35,7 +35,7 @@ int main() {
     return 0;
 }
 
-void preencheMatriz(int **mat, int linhas, int colunas) {
+void preencheMatriz(int** mat, int linhas, int colunas) {
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             scanf("%d", *(mat + i) + j);
@@ -43,7 +43,7 @@ void preencheMatriz(int **mat, int linhas, int colunas) {
     }
 }
 
-void imprimeMatriz(int **mat, int linhas, int colunas) {
+void imprimeMatriz(int ** mat, int linhas, int colunas) {
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             printf("%d\t", *(*(mat + i) + j));

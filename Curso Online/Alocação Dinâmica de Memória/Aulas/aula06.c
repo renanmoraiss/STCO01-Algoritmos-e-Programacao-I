@@ -18,7 +18,6 @@ int main() {
     vet = malloc(sizeof(int) * tam);
 
     if (vet == NULL) {
-        printf("Erro\n");
         return -1;
     }
 

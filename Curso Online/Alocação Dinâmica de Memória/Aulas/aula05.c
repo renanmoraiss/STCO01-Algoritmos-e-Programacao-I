@@ -37,14 +37,12 @@ int main() {
     vet = malloc(sizeof(int) * tam);
 
     if (vet == NULL) {
-        printf("Erro\n");
         return -1;
     }
 
     vet2 = calloc(tam2, sizeof(int));
 
     if (vet2 == NULL) {
-        printf("Erro\n");
         return -1;
     }
 

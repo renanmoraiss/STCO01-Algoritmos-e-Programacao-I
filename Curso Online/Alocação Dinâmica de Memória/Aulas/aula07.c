@@ -19,8 +19,15 @@ int main() {
 
     mat = malloc(sizeof(int*) * linhas);
 
+    if (mat == NULL) {
+        return -1;
+    }
+
     for (int i = 0; i < linhas; i++) {
         mat[i] = malloc(sizeof(int) * colunas);
+        if (mat[i] == NULL) {
+            return -1;
+        }
     }
 
     for (int i = 0; i < linhas; i++) {
