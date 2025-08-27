@@ -2,16 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-union Frases {
-    char frase1[35];
-    char frase2[30];
-};
 
 void modificaMatriz(int ** matriz, int ordem);
 void imprimeMatriz(int** matriz, int ordem, char frase[]);
 
 int main() {
-    union Frases frase;
     int **mat, ordem;
     printf("Ordem da matriz: ");
     scanf("%d", &ordem);
@@ -29,13 +24,11 @@ int main() {
         }
     }
 
-    strcpy(frase.frase1, "Matriz inicial");
-    imprimeMatriz(mat, ordem, frase.frase1);
+    imprimeMatriz(mat, ordem, "Matriz inicial");
 
     modificaMatriz(mat, ordem);
 
-    strcpy(frase.frase2, "Matriz identidade");
-    imprimeMatriz(mat, ordem, frase.frase2);
+    imprimeMatriz(mat, ordem, "Matriz identidade");
 
     for (int i = 0; i < ordem; i++) {
         free(mat[i]);
