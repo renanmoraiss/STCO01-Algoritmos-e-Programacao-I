@@ -1,0 +1,11 @@
+As vzs eh necessario alterar, durante a execucao de um programa, o tamanho de um bloco de bytes que foi alocado por malloc.
+Isso acontece, por exemplo, durante a leitura de um arquivo que se revela maior que o esperado. Nesse caso, podemos recorrer
+a funcao realloc para redimensionar o bloco de bytes.
+
+A funcao realloc aumenta o tamanho de um bloco de memoria que tenha sido alocado dinamicamente. A funcao recebe o endereco de um bloco
+anteriormente alocado por malloc (ou pelo proprio realloc) bem como o numero de bytes que o novo bloco deve ter.
+A funcao aloca um bloco do tamanho desejado, copia para ele o conteudo do bloco original, e devolve o endereco do novo bloco.
+A funcao libera o bloco original usando o free.
+
+A funcao realloc tambem pode diminuir o tamanho de um bloco de memoria alocado dinamicamente. Eh o que acontece se o numero de bytes solicitado
+for menor que o tamanho do bloco original. Nesse caso, nao ah alocacao de memoria nem movimentação do conteudo do bloco, apenas reducao do tamanho do bloco, ou seja, o endereco retornado sera o mesmo do bloco original.
