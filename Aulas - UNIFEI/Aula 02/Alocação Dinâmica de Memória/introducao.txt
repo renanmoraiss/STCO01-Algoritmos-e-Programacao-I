@@ -1,0 +1,9 @@
+-> As declarações abaixo alocam espaço na memória para algumas variáveis. A alocação é estática, ou seja,
+ocorre antes do programa ser executado.
+ex: char c;
+    int i;
+    int v[10];
+
+Em muitas aplicações, a qtd de memória a alocar só se torna conhecida durante a execução do programa.
+Para lidar com essa situação eh preciso recorrer a alocação dinamica de memoria.
+A alocacao dinamica de memoria eh administrada pelas funções malloc, calloc, realloc e free, que estão na stdlib.

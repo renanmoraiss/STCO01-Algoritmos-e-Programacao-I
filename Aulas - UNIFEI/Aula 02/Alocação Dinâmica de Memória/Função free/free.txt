@@ -1,0 +1,8 @@
+-> As variáveis alocadas estaticamente dentro de uma função, tbm conhecidas como variáveis matemáticas ou locais,
+desaparecem assim que a execução da funçao termina. Ja as variaveis alocadas dinamicamente continuam a existir mesmo dps que
+a exeucacao da funcao termina. Se for necessario liberar a memoria ocupada por essas variaveis, eh preciso recorrer a funcao free.
+
+-> A função free desaloca a porcao de memoria alocada por malloc. A instrucao free(ptr) avisa ao sistema que o bloco de bytes
+apontados por ptr esta disponivel para reciclagem. A proxima invocacao de malloc podera tomar posse desses btyes.
+
+!!NUNCA aplique a funcao free a uma parte de um bloco de bytes alocado por malloc (ou realloc). Aplique free apenas ao bloco todo.

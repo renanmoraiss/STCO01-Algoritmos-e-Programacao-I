@@ -1,0 +1,25 @@
+-> A função malloc (=memory allocation) aloca espaço para um bloco de bytes consecutivos na memória RAM (=random access memory) 
+do computador e devolve o endereço desse bloco. O numero de bytes é especificado no argumento da funcao.
+
+No seguinte fragmento de codigo, malloc aloca 1 byte:
+    char *ptr;
+    ptr = malloc (1);
+    scanf("%c", ptr);
+
+-> O endereco devolvido por malloc é do tipo generico void*. O programador armazena esse endereco num ponteiro de tipo apropriado.
+No exemplo acima, o endereco é armazenado no ponteiro ptr, que é do tipo ponteiro-para-char. A transformacao do ponteiro generico
+em ponteiro-para-char é automatica; não é necessario escrever ptr = (char*)malloc(1); 
+
+-> A fim de alocar espaco para um objeto que precisa de mais que 1 byte, convem usar o operador sizeof, que diz qts bytes o objeto em questao tem:
+    struct data {
+        int dia, mes, ano;
+    };
+    typedef struct data data;
+    data *d;
+    d = malloc(sizeof(data));
+    d->dia = 31; d->mes = 12; d->ano = 2016;
+
+-> sizeof nao eh uma funcao mas um operador, tal como return, por exemplo. Os ( ) na expressao sizeof(data) sao necessarios porque
+data eh um tipo-de-dados. O operador sizeof tbm pode ser aplicado diretamente a uma variavel: 
+se var é uma variavel, então sizeof var é o numero de bytes ocupados por var.
+Poderiamos ter escrito d = malloc(sizeof*d) no exemplo acima.
